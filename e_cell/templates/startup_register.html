@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+
+<form method="Post" action="" enctype="multipart/form-data">
+	{{ form.hidden_tag() }}
+	<div class="align">
+		<div class="form">
+			<div class="note">
+				<p>Register your StartUps here</p>
+			</div>
+			<div class="form-content">
+				<div class="column">
+					<div class="form-group">
+                                {{ form.startup_name.label(class="form-control-label")}}
+
+                                {% if form.startup_name.errors %}
+                                     {{ form.startup_name(class="form-control form-control-lg is-invalid") }}
+                                     <div class="invalid-feedback">
+                                     	{% for error in form.startup_name.errors %}
+                                     	   <span>{{error}}</span>
+                                     	 {% endfor %}  
+                                     </div>
+                                 {% else %}
+                                     {{ form.startup_name(class="form-control form-control-lg") }}
+                                 {% endif %}    
+                    </div>
+                    <div class="form-group">
+                                {{ form.poc_name.label(class="form-control-label")}}
+
+                                {% if form.poc_name.errors %}
+                                     {{ form.poc_name(class="form-control form-control-lg is-invalid") }}
+                                     <div class="invalid-feedback">
+                                     	{% for error in form.poc_name.errors %}
+                                     	   <span>{{error}}</span>
+                                     	 {% endfor %}  
+                                     </div>
+                                 {% else %}
+                                     {{ form.poc_name(class="form-control form-control-lg") }}
+                                 {% endif %}    
+                    </div>
+                    <div class="form-group">
+                                {{ form.poc_email.label(class="form-control-label")}}
+
+                                {% if form.poc_email.errors %}
+                                     {{ form.poc_email(class="form-control form-control-lg is-invalid") }}
+                                     <div class="invalid-feedback">
+                                     	{% for error in form.poc_email.errors %}
+                                     	   <span>{{error}}</span>
+                                     	 {% endfor %}  
+                                     </div>
+                                 {% else %}
+                                     {{ form.poc_email(class="form-control form-control-lg") }}
+                                 {% endif %}    
+                    </div>
+                    <div class="form-group">
+                                {{ form.poc_phone_no.label(class="form-control-label")}}
+
+                                {% if form.poc_phone_no.errors %}
+                                     {{ form.poc_phone_no(class="form-control form-control-lg is-invalid") }}
+                                     <div class="invalid-feedback">
+                                     	{% for error in form.poc_phone_no.errors %}
+                                     	   <span>{{error}}</span>
+                                     	 {% endfor %}  
+                                     </div>
+                                 {% else %}
+                                     {{ form.poc_phone_no(class="form-control form-control-lg") }}
+                                 {% endif %}    
+                    </div>
+                    <div class="form-group">
+                    	<label>Choose File</label>
+                    	<div class="custom-file">
+                    		<input type="file" class="custom-file-input" name="inputfile">
+                    		<label class="custom-file-label" for="inputfile">choose file</label>
+                    	</div>
+                    </div>
+                    <div class="form-group">
+                                {{ form.incentive.label(class="form-control-label")}}
+
+                                {% if form.incentive.errors %}
+                                     {{ form.incentive(class="form-control form-control-lg is-invalid") }}
+                                     <div class="invalid-feedback">
+                                     	{% for error in form.incentive.errors %}
+                                     	   <span>{{error}}</span>
+                                     	 {% endfor %}  
+                                     </div>
+                                 {% else %}
+                                     {{ form.incentive(class="form-control form-control-lg") }}
+                                 {% endif %}    
+                    </div>
+                    <div class="form-group">
+                                {{ form.duration.label(class="form-control-label")}}
+
+                                {% if form.duration.errors %}
+                                     {{ form.duration(class="form-control form-control-lg is-invalid") }}
+                                     <div class="invalid-feedback">
+                                     	{% for error in form.duration.errors %}
+                                     	   <span>{{error}}</span>
+                                     	 {% endfor %}  
+                                     </div>
+                                 {% else %}
+                                     {{ form.duration(class="form-control form-control-lg") }}
+                                 {% endif %}    
+                    </div>
+                    <div class="form-group">
+                                {{ form.website.label(class="form-control-label")}}
+
+                                {% if form.website.errors %}
+                                     {{ form.website(class="form-control form-control-lg is-invalid") }}
+                                     <div class="invalid-feedback">
+                                     	{% for error in form.website.errors %}
+                                     	   <span>{{error}}</span>
+                                     	 {% endfor %}  
+                                     </div>
+                                 {% else %}
+                                     {{ form.website(class="form-control form-control-lg") }}
+                                 {% endif %}    
+                    </div>
+					
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary">{{form.submit}}</button>
+		</div>
+
+	</div>
+	
+</form>
+{% endblock %}
