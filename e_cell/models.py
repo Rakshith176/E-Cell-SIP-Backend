@@ -7,7 +7,7 @@ class StartUp(db.Model):
 	poc_name = db.Column(db.String(30),unique=False,nullable=False)
 	poc_email = db.Column(db.String,nullable=False,unique=False)
 	poc_phone_no= db.Column(db.Integer,nullable=False,unique=False)
-	#profile_doc = db.Column(db.LargeBinary,nullable=True)
+	profile_doc = db.Column(db.LargeBinary,nullable=True)
 	incentive = db.Column(db.String(30),nullable=False)
 	duration = db.Column(db.String(30),nullable=False)
 	website = db.Column(db.String,unique=True,nullable=True)

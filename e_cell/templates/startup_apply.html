@@ -8,8 +8,12 @@
 
 {% for list in startup_list %}
 
-<button  type="button" class="startuplist">
-	<div>
+
+
+
+<!-- The Modal -->
+<button  id="myBtn"  data-target="#mymodal{{list.id}}" class="startuplist">
+<div>
 		<h3>{{ list.startup_name }}</h3>
 		<table>
 		<tr>
@@ -27,43 +31,32 @@
 
 
 
-	</div>
-	
+</div>
 </button>
 
-
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div class="modal" id="mymodal{{list.id}}">
+	<div class="modal-content">
+		<div class="modal-header">
+	      <span class="close">&times;</span>
+	      <h2>{{list.startup_name}}</h2>
+	    </div>
+		<div class="modal-body">
+		    
+		    <p>{{list.startup_name}}</p>
+		    <p>Incentive</p>
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>{{ list.startup_name }}</h2>
+		    <p>{{list.incentive}}</p>
+		</div>
+	    <div class="modal-footer">
+	      <h3>Modal Footer</h3>
+	    </div>
     </div>
-    <div class="modal-body">
-      <p>StartUp Name</p>
-      <p>{{ list.startup_name }}</p>
-
-      <p>Incentives</p>
-      <p>{{ list.incentive }}</p>
-
-      <p>Duration</p>
-      <p>{{ list.duration }}</p>
-
-      <p>Website</p>
-      <p>{{ list.website }}</p>
-
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div>
-  </div>
-
 </div>
-
-<script type="text/javascript">
-var modal = document.getElementById("myModal");
+              
+<script>
+// Get the modal
+var modal = document.getElementById("mymodal{{list.id}}");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -90,8 +83,10 @@ window.onclick = function(event) {
 </script>
 
 
-
 {% endfor %}
+
+
+
 
 
 
