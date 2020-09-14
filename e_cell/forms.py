@@ -9,7 +9,7 @@ class Startup_Registration(FlaskForm):
     poc_name = StringField('Point of contact Name',validators=[DataRequired(),Length(min=4,max=30)])
     poc_email=StringField('Point of contact email',validators=[DataRequired(),Email()])
     poc_phone_no = IntegerField('Point of contact Phone no',validators=[DataRequired()])
-    profile_doc = FileField('Profile_doc')
+    #profile_doc = FileField('Profile_doc')
     incentive = StringField('Incentive',validators=[DataRequired(),Length(min=4,max=30)])
     duration= StringField('Duration',validators=[DataRequired(),Length(min=4,max=30)])
     website=StringField('Website',validators=[URL()])
@@ -18,5 +18,10 @@ class Startup_Registration(FlaskForm):
             name=StartUp.query.filter_by(startup_name=startup_name.data).first()
             if name:
                 raise ValidationError("The name of startup already choosen. Select different one!")
+    
+    def validate_website(self,website):
+            name=StartUp.query.filter_by(website=website.data).first()
+            if name:
+                raise ValidationError("The website choosen by different startup. Select different one!")
 
         

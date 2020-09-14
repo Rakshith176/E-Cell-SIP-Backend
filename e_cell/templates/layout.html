@@ -33,12 +33,26 @@
 }
 .form-control{
 
-    border-radius:1rem;
+    border-radius:1.5rem;
 }
 .align{
   padding-top: 10%;
 }
 
+
+.startuplist{
+  display: flex;
+  flex-direction: column;
+}
+
+.startuplist > div {
+  background-color: #f1f1f1;
+  width: 1000px;
+  margin: 10px;
+  text-align: left;
+  line-height: 15px;
+  font-size: 10px;
+}
 </style>
 
 
@@ -46,14 +60,21 @@
 <body>
 
 	<section>
-		
+		<H1>E-SUMMIT SIP BACKEND</H1>
 	</section>
 	<section>
 		{%block content%}
 {%endblock%}
 
 	</section>
-	<footer>
+	<footer style="background-color: black">
+    <table>
+      <tr>
+        <th>ABOUT</th>
+        <th>CONTACT</th>
+        <img src="{{ url_for('static',filename='logo_ecell.svg') }}" width="120" height="120">
+      </tr>
+    </table>
 		
 	</footer>
 
