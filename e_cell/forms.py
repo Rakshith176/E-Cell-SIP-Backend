@@ -1,7 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField,SubmitField,FileField,IntegerField
 from wtforms.validators import DataRequired,Length,Email,ValidationError,URL
-from flask_wtf.file import FileAllowed
 from e_cell.models import StartUp
 
 class Startup_Registration(FlaskForm):

@@ -1,6 +1,6 @@
 from e_cell import db
 
-
+#Database model to store information of startups entered in register form
 class StartUp(db.Model):
 	id = db.Column(db.Integer,primary_key=True)
 	startup_name = db.Column(db.String(30),unique=True,nullable=False)
