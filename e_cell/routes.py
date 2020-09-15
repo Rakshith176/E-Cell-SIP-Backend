@@ -4,6 +4,8 @@ from e_cell.forms import Startup_Registration
 from e_cell.models import StartUp
 from io import BytesIO
 
+
+#the route where user can register their startups
 @app.route("/register",methods=['GET','POST'])
 def register():
 	form = Startup_Registration() #the registration form is passed to the registration page
@@ -17,7 +19,7 @@ def register():
 		return redirect(url_for('apply'))
 	return render_template('startup_register.html',form=form,title='E-Cell|SIP Startups')
 
-
+#the route for the page where details of startups registered is displayed
 @app.route("/apply",methods=['GET','POST'])
 def apply():
 	startup_list = StartUp.query.all()

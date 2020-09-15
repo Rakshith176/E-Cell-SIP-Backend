@@ -17,7 +17,8 @@
 
 					<div class="form-group">
                             {{ form.startup_name.label(class="form-control-label")}}
-
+                            
+                            <!-- Section which displays the error in filling the field(the same is applied to all the fields)-->
                             {% if form.startup_name.errors %}
                                  {{ form.startup_name(class="form-control form-control-lg is-invalid") }}
                                  <div class="invalid-feedback">

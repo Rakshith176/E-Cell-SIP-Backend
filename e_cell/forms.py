@@ -13,6 +13,8 @@ class Startup_Registration(FlaskForm):
     duration= StringField('Duration',validators=[DataRequired(),Length(min=4,max=30)])
     website=StringField('Website',validators=[URL()])
     submit=SubmitField('Submit')
+
+    #the following functions make sure that the startup name or startup website is not registered twice
     def validate_startup_name(self,startup_name):
             name=StartUp.query.filter_by(startup_name=startup_name.data).first()
             if name:
