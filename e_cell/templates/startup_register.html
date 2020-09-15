@@ -9,24 +9,25 @@
 	{{ form.hidden_tag() }}
 	<div class="align">
 		<div class="form">
-			<div class="note">
-				<p>Register your StartUps here</p>
+			<div>
+				<h4><p>Register your StartUps here</p></h4>
 			</div>
 			<div class="form-content">
 				<div class="column">
-					<div class="form-group">
-                                {{ form.startup_name.label(class="form-control-label")}}
 
-                                {% if form.startup_name.errors %}
-                                     {{ form.startup_name(class="form-control form-control-lg is-invalid") }}
-                                     <div class="invalid-feedback">
-                                     	{% for error in form.startup_name.errors %}
-                                     	   <span>{{error}}</span>
-                                     	 {% endfor %}  
-                                     </div>
-                                 {% else %}
-                                     {{ form.startup_name(class="form-control form-control-lg") }}
-                                 {% endif %}    
+					<div class="form-group">
+                            {{ form.startup_name.label(class="form-control-label")}}
+
+                            {% if form.startup_name.errors %}
+                                 {{ form.startup_name(class="form-control form-control-lg is-invalid") }}
+                                 <div class="invalid-feedback">
+                                     {% for error in form.startup_name.errors %}
+                                        <span>{{error}}</span>
+                                      {% endfor %}  
+                                 </div>
+                             {% else %}
+                                {{ form.startup_name(class="form-control form-control-lg") }}
+                             {% endif %}    
                     </div>
                     <div class="form-group">
                                 {{ form.poc_name.label(class="form-control-label")}}
@@ -73,8 +74,9 @@
                     <div class="form-group">
                     	<label>Profile doc</label>
                     	<div class="custom-file">
-                    		<input type="file" class="custom-file-input" name="inputfile">
-                    		<label class="custom-file-label" for="inputfile">choose file</label>
+                    		<label  for="inputfile">Select your startup profile file: </label>
+                            <input type="file" name="inputfile"><br>
+                    		
                     	</div>
                     </div> 
                     <div class="form-group">
@@ -128,4 +130,5 @@
 	</div>
 	
 </form>
+
 {% endblock %}
