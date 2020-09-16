@@ -4,7 +4,7 @@
 
 {% block content %}
 
-
+<a class="btn btn-primary" href="{{url_for('apply')}}">STARTUPS</a>
 <form method="Post" action="" enctype="multipart/form-data">
 	{{ form.hidden_tag() }}
 	<div class="align">
@@ -125,7 +125,7 @@
 					
 				</div>
 			</div>
-			<button type="button">{{form.submit}}</button>
+			<a class="btn btn-primary">{{form.submit}}</a>
 		</div>
 
 	</div>

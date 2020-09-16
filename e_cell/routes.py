@@ -15,8 +15,8 @@ def register():
 		startup= StartUp(startup_name=form.startup_name.data,poc_name=form.poc_name.data,poc_email=form.poc_email.data,poc_phone_no=form.poc_phone_no.data,profile_doc=file.read(),incentive=form.incentive.data,duration=form.duration.data,website=form.website.data)
 		db.session.add(startup)
 		db.session.commit()
-		flash(f'Congrats your Startup "{form.startup_name.data}" is added.. You can see it in the list below','success')
-		return redirect(url_for('apply'))
+		flash(f'Congrats your Startup "{form.startup_name.data}" is added.. To see the list of startups click STARTUPS button','success')
+		return redirect(url_for('register'))
 	return render_template('startup_register.html',form=form,title='E-Cell|SIP Startups')
 
 #the route for the page where details of startups registered is displayed
@@ -32,4 +32,5 @@ def apply():
 def download(id):
 	if id:
 		file_data = StartUp.query.filter_by(id=id).first() #this filters the required file to download by taking the id arugument from the download button from the startup details
-		return send_file(BytesIO(file_data.profile_doc),attachment_filename="Profile_doc",as_attachment=True)#downloads the required profile of startup in the name of 'Profile_doc'
+		file_name = file_data.startup_name
+		return send_file(BytesIO(file_data.profile_doc),attachment_filename=file_name,as_attachment=True)#downloads the required profile of startup(Startup name will be the filename of downloaded file)
