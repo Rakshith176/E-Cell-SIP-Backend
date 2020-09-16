@@ -15,7 +15,7 @@ def register():
 		startup= StartUp(startup_name=form.startup_name.data,poc_name=form.poc_name.data,poc_email=form.poc_email.data,poc_phone_no=form.poc_phone_no.data,profile_doc=file.read(),incentive=form.incentive.data,duration=form.duration.data,website=form.website.data)
 		db.session.add(startup)
 		db.session.commit()
-		flash(f'Congrats your startup {form.startup_name.data} is added.. You can see it in the list below','success')
+		flash(f'Congrats your Startup "{form.startup_name.data}" is added.. You can see it in the list below','success')
 		return redirect(url_for('apply'))
 	return render_template('startup_register.html',form=form,title='E-Cell|SIP Startups')
 
