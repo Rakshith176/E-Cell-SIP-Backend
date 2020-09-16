@@ -25,6 +25,8 @@ def apply():
 	startup_list = StartUp.query.all()
 	return render_template('startup_apply.html',title='E-Cell|SIP Students',startup_list=startup_list)
 
+
+#this route id will remain unknown to prevent direct access by the user and no redirects will happen to this route for download
 @app.route("/download<int:id>",methods=['GET'])
 #a function to download the profile of the startup
 def download(id):
