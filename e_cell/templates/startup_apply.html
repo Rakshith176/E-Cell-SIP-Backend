@@ -69,14 +69,18 @@
 	      			</tr>
 	      			<tr>
 	      				Profile doc<br>
-
-	      				<!-- The below button enables to download the profile of the particular startup by passing the id as argument to the apply page -->
-	      				<a type="button" class="btn-default"  href="{{url_for('download',id=list.id)}}">Click to download</a><br>
+                        {% if list.profile_doc %}
+	      				      <!-- The below button enables to download the profile of the particular startup by passing the id as argument to the apply page -->
+	      				      <a type="button" class="btn-default"  href="{{url_for('download',id=list.id)}}">Click to download</a><br>
+	      				 {% endif %}     
 	      				<br>
 	      			</tr>
 	      			<tr>
 	      				Website<br>
-	      				<a href="{{list.website}}">{{list.website}}</a><br> 
+
+	      				{% if list.website %}
+	      				      <a href="{{list.website}}">{{list.website}}</a><br> 
+	      				{% endif %}
 	      				<br>    
 	      			</tr>
 
